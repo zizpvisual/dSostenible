@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Biblioteca Ziz | Portadas para imprimir</title>
+  <title>Portada de libros</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f2f2f2 url('https://www.transparenttextures.com/patterns/paper-fibers.png'); /* textura papel */
+      background: #f9f9f9 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
       background-size: 300px;
       color: #00134E;
     }
 
     header {
       background-color: #00134E;
-      background-image: url('4e9bc6c9-377b-486b-8c56-feecbf28a183.jpg');
+      background-image: url('4e9bc6c9-377b-486b-8c56-feecbf28a183.png');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: top center;
@@ -26,10 +26,36 @@
       align-items: flex-end;
       justify-content: center;
       padding-bottom: 1em;
-      color: white;
+      color: #FFD700;
       font-size: 1.8em;
       font-weight: 600;
       text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    nav {
+      background-color: #00134E;
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      padding: 0.6em;
+    }
+
+    nav a {
+      color: #FFD700;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0 1em;
+      position: relative;
+    }
+
+    nav a:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 25%;
+      width: 1px;
+      height: 50%;
+      background: #FFD700;
     }
 
     .container {
@@ -40,6 +66,24 @@
       flex-wrap: wrap;
       gap: 1.5em;
       justify-content: center;
+    }
+
+    .filters {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      margin-bottom: 2em;
+      justify-content: center;
+    }
+
+    .filters input[type="text"],
+    .filters select {
+      padding: 0.6em;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+      width: 180px;
     }
 
     .book-card {
@@ -74,7 +118,7 @@
 
     .download-btn {
       background: #00134E;
-      color: white;
+      color: #FFD700;
       border: none;
       padding: 0.5em 1em;
       border-radius: 6px;
@@ -91,14 +135,44 @@
       .book-card {
         width: 90%;
       }
+
+      .filters input,
+      .filters select {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>Biblioteca Ziz</header>
+<header>Portada de libros</header>
+
+<nav>
+  <a href="#">Iniciar sesión</a>
+  <a href="#">Mis libros</a>
+</nav>
 
 <div class="container">
+  <div class="filters">
+    <input type="text" placeholder="Buscar libro...">
+    <select>
+      <option>Año de publicación</option>
+      <option>1974</option>
+      <option>2008</option>
+    </select>
+    <select>
+      <option>Autor</option>
+      <option>Blest Gana</option>
+      <option>Suzanne Collins</option>
+    </select>
+    <select>
+      <option>Editorial</option>
+      <option>Gabriela Mistral</option>
+      <option>Scholastic Press</option>
+    </select>
+  </div>
+
+  <!-- Libro 1 -->
   <div class="book-card">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Mart%C3%ADn_Rivas.jpg/440px-Mart%C3%ADn_Rivas.jpg" alt="Martín Rivas" />
     <div class="book-info">
@@ -111,6 +185,7 @@
     </div>
   </div>
 
+  <!-- Libro 2 -->
   <div class="book-card">
     <img src="https://upload.wikimedia.org/wikipedia/en/d/dc/The_Hunger_Games.jpg" alt="Los Juegos del Hambre" />
     <div class="book-info">
@@ -123,9 +198,20 @@
     </div>
   </div>
 
-  <!-- Puedes seguir agregando más libros con este mismo formato -->
-
+  <!-- Libro 3 -->
+  <div class="book-card">
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/f7/The_Great_Gatsby_1925_jacket.jpeg" alt="El Gran Gatsby" />
+    <div class="book-info">
+      <h3>El Gran Gatsby</h3>
+      <p><strong>Autor:</strong> F. Scott Fitzgerald</p>
+      <p><strong>Año:</strong> 1925</p>
+      <a href="https://upload.wikimedia.org/wikipedia/en/f/f7/The_Great_Gatsby_1925_jacket.jpeg" download>
+        <button class="download-btn">Descargar</button>
+      </a>
+    </div>
+  </div>
 </div>
+
 </body>
 </html>
 
